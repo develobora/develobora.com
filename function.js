@@ -52,7 +52,7 @@ $(document).ready(function(){
 		}, 200);
 	});
 
-  $('.main-nav').click(function(e){   //funkcja click na 'scrollup'
+  $('.main-nav').click(function(e){  
       
       jQuery('html, body').animate({  
         scrollTop: jQuery('body').offset().top
