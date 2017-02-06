@@ -1,0 +1,932 @@
+/***********************--[ Preliminary commands ]--***********************/
+body {
+	margin: 0;
+	height: 100%;
+	font-family: 'Rajdhani', sans-serif;
+	text-shadow: 1px 1px 8px #000;
+	color: #E0E0E0;
+	-moz-box-sizing: border-box;
+ 	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: none;
+}
+body.ready,
+body#contact, 
+body#sent {
+	display: inherit;
+}
+
+/* wyłączanie strzałek w inpucie number */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+html {
+	margin: 0;
+	height: 100%;
+}
+img {
+	border: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+/* funkcja opóźniania animacji - transition */
+a, span, strong, :before, :after, button {
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+.center {
+	max-width: 1200px;
+	width: 96%; 
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 2%;
+	overflow: hidden;
+	z-index: 1;
+	position: relative;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.alignRight {
+	text-align: right;
+}
+.alignCenter {
+	text-align: center;
+}
+.alignLeft {
+	text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+/*Animated cursor*/
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/***********************--[ Nav Bar ]--***********************/
+body nav,
+.sect-nav {
+	position: fixed;
+	top: 0;
+	width: 100%; 
+	height: 50px;
+	
+}
+body nav {
+	z-index: 99;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -ms-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+  
+}
+nav a.menu,
+.logo {	
+	line-height: 50px;
+	padding: 0 20px;
+	font-weight: 500;
+	font-size: 1.1em;
+}
+body nav.activebg {
+	background: #2e2923;
+	box-shadow: 0 0 15px rgba(0,0,0,.9);
+	border: none;
+}
+.sect-nav {
+	background: -moz-linear-gradient(-45deg, #2a2520 0%, #302b25 100%);
+    background: -webkit-linear-gradient(-45deg, #2a2520 0%, #302b25 100%);
+    background: linear-gradient(135deg, #2a2520 0%, #302b25 100%);
+	box-shadow: 0 0 15px rgba(0,0,0,.9);
+}
+nav a:hover.menu,
+nav a.active {
+	color: #897656;
+	font-weight: 500;
+}			
+			/*--[ Logo ]--*/
+.logo {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2.15em;
+	color: #73644b;
+	text-decoration: none;
+}
+div.logo-container,
+nav div.fb {
+	position: fixed;
+	left: 0;
+	display: inline-block;
+}
+a:hover.logo {
+	color: #fff;
+}
+
+			/*--[ Fb ]--*/
+nav div.fb {
+	right: 0;
+	left: inherit;
+}
+.icon-facebook {
+	font-size: 28px;
+	line-height: 50px;
+	padding: 7px 0;
+	color: #73644b;
+}
+.icon-facebook:hover {
+	background-color: #4668b3;
+	color: #fff;
+} 
+
+/***********************--[ Page commands ]--***********************/
+#static-wrap {
+	position: static;
+}
+.area.sect-nav {
+	line-height: 50px;
+	font-size: 30px;
+	position: relative;
+	height: 50px;
+	z-index: 1;
+}
+.area {
+  	width: 100%;
+  	height: 100%;
+  	position: relative;
+}
+.shadow {
+	background: rgba(0,0,0,0.3);
+	height: 100%;	top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+	position: absolute;
+	z-index: 1;
+}
+
+/***********************--[ Main Page ]--***********************/
+
+			/*--[ background - image ]--*/
+section {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.area.main-page {
+	background-image: url(../images/wood4min.jpg);
+	height: 100vh;
+}
+			/*--[ Main Photo ]--*/
+body .photo {
+	border: 10px solid rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin: 0 auto 30px;
+    padding: 15px;
+    display: block;
+    opacity: 0;
+    -webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-ms-transition: all 1s linear;
+	-o-transition: all 1s linear;
+	transition: all 1s linear;
+}
+body .photo.ready {
+	opacity: 1;
+}
+			/*--[ Header - Box ]--*/
+.header-box {
+	top: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+}
+.header-top, .typed-cursor {
+	font: 400 4.4em 'Cutive Mono', monospace;
+	line-height: 1.5em;
+}
+			/*--[ Arrow ]--*/
+ .arrow {
+	width: 24px;
+	height: 24px;
+	display: block;
+	background: url(../images/down-arrow.png) center no-repeat;
+	vertical-align: middle;
+	margin: 0 auto;
+	padding: 20px 0px 60px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+}
+.arrow.two {
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    animation-duration: 1s;
+  }
+
+
+/***********************--[ About Me ]--***********************/
+
+.area.about-me {
+	background-image: url(../images/10.jpg);
+	background-size: cover;
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+			/*--[ Text-area ]--*/
+.text-area {
+	background-color: rgba(42, 37, 32, 0.8);
+	padding: 30px ;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	border-radius: 10px;
+    margin: 100px auto;
+	z-index: 1;
+}
+
+/***********************--[ Skills ]--***********************/
+
+.area.skills {
+	background-image: url(../images/7.jpg);
+	background-size: cover;
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.area.skills ul li {
+	list-style: none;
+	display: inline-block;
+	width: 30%;
+	margin: 0 auto 30px;
+	opacity: 0;
+	transform: translateX(-30px);
+	transition: all 0.3s ease-in-out;
+}
+.area.skills ul li.know-sth {
+	width: 24%;
+}
+.area.skills ul li.is-showing {
+	opacity: 1;
+	transform: translateX(0px);
+}
+.area.skills ul li span {
+	display: block;
+	font-size: 18px;
+}
+
+
+/***********************--[ Portfolio ]--***********************/
+
+.area.portfolio {
+	background-image: url(../images/4.jpg);
+	background-size: cover;
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.page-middle {
+	padding: 100px 0;
+	overflow: hidden;
+	margin: auto;
+}
+.page {
+	width: 400px;
+	border: 1px solid #333;
+	position: relative;
+	margin: 0 70px;	
+}
+.check {
+	font-size: 30px;
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	top: 0; bottom: 0; right: 0; left: 0;
+	margin: auto;
+	height: 145px;
+	border: 1px solid #fff;
+}
+.check.second {
+	height: 123px;
+}
+			/*--[ Image-1 ]--*/
+.image1, 
+.image2 {
+	background: url(../images/landing-hard.jpg) center no-repeat;
+	min-height: 577px;
+	width: 100%;
+	background-size: auto;
+	position: relative;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+.page.left,
+.page.right {
+	opacity: 0;
+}
+.page.left.is-showing, 
+.page.right.is-showing {
+	opacity: 1;
+}
+			/*--[ Image-2 ]--*/
+.image2 {
+	background: url(../images/moja.jpg) center no-repeat;
+}
+			/*--[ Image-hover ]--*/
+.image1:before,
+.image2:before {
+	background-color: rgba(0, 0, 0, 0.1);
+	content: "";
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+}
+.page:hover .image1,
+.page:hover .image2,
+.check:hover .image1 {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	-webkit-filter: blur(5px);
+}
+.page:hover .check,
+.check:hover {
+	opacity: 1;
+}
+.page:hover .image1:before,
+.page:hover .image2:before,
+.check:hover .image1:before {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+			/*--[ Description Bar ]--*/
+.description {
+	font-size: 14px;
+}
+
+/***********************--[ Contact ]--***********************/
+
+			/*--[ Background-color ]--*/
+.area.contact {
+	background-image: url(../images/telephone.jpg);
+	background-size: cover;
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+form {
+	background-color: rgba(42, 37, 32, 0.8);
+}
+
+			/*--[ Icon-contact ]--*/
+form .icon {
+	font-size: 1.7em;
+	display: block;
+    background: rgba(42, 37, 32, 0.8);
+}
+form .icon.phone,
+form .icon.mail {
+	padding-bottom: 13px;
+	padding-top: 13px;
+}
+form .icon.mail {
+	margin-top: 35px;
+}
+form .left.social,
+form .right.social {
+	width: 46%;
+	background: rgba(42, 37, 32, 0.8);
+}
+form .icon.facebook,
+form .icon.github {
+	height: 128px;
+	width: 128px;
+	padding: 25.49% 23%;
+}
+form .icon.facebook {
+	background: url(../images/fb.png) no-repeat center;
+}
+form .icon.github {
+	background: url(../images/github-logo.png) no-repeat center;
+}
+
+			/*--[ Social-hover ]--*/
+
+form .left.social:hover .icon.facebook {
+	background: url(../images/fb-hover.png) no-repeat center;
+}
+form .right.social:hover .icon.github {
+	background: url(../images/github-logo1.png) no-repeat center;
+}
+form .left.social:hover {
+	background: #4668b3;
+}
+form .right.social:hover {
+	background: #f5f5f5;
+}
+form .contact-box {
+	overflow: hidden;
+}
+form .contact-box > .left,
+form .contact-box > .right {
+	width: 43%;
+	padding: 35px 35px 0 35px;
+}
+form .icon.phone:before, 
+form .icon.mail:before {
+	content: '';
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	position: relative;
+	background: url(../images/old-typical-phone.png);
+	vertical-align: middle;
+	margin-right: 35px;
+	margin-left: 35px;
+	background-size: cover;
+}
+form .icon.mail:before {
+	background: url(../images/envelope.png);
+	background-size: cover;
+}
+			/*--[ Form ]--*/
+form,
+form .parentRow {
+	overflow: hidden;	
+}
+form .left .left,
+form .left .right
+{
+	width: 37%;	
+}
+form > .left,
+form > .right
+{
+	width: 43%;
+	padding: 35px;
+}
+form > .left .text p 
+{
+	font-size: 24px;
+	font-weight: 500;
+	display: block; 	
+	margin: 3px 0;
+}
+form > .left .text span {
+	font-size: 16px;	
+}
+form .row{
+	margin-top: 35px;		
+}
+form textarea {
+	height: 201px;
+}
+form input,
+form textarea {
+	display: block;
+	width: 90%;
+	padding: 20px 5%;	
+	border: 0;
+	font-size: 15px;
+	color: #E0E0E0;
+	box-shadow: inset 0px 0px 1px 1px #d1d1d1;	
+	outline: none;
+	resize: none;
+	background: rgba(42, 37, 32, 0.8);
+}
+			/*--[ Shadow-box ]--*/
+form .icon.phone,
+form .icon.mail,
+form .left.social,
+form .right.social,
+form input,
+form textarea {
+	-moz-box-shadow: 2px 2px 3px rgba( 0, 0, 0, 0.55 ) inset;
+    -webkit-box-shadow: 2px 2px 3px rgba( 0, 0, 0, 0.55 ) inset;
+    box-shadow: 2px 2px 3px rgba( 0, 0, 0, 0.55 ) inset;
+    border: 1px solid #343434;
+    border: 1px solid rgba( 255, 255, 255, 0.13 );
+}
+
+			/*--[ Form Button ]--*/
+form .submitElement button {
+	border: 0;
+	display: inline-block;
+	cursor: pointer;
+	background: #2f2a24;
+	color: #E0E0E0;
+	width: 150px;
+	margin: 25px auto 0;
+	text-decoration: none;	
+	font: 500 16px Rajdhani;
+	padding: 15px 0;
+	border: 1px solid #343434;
+
+}
+form .submitElement button:hover{
+	background: #211d19;
+	cursor: pointer; 	
+	background: rgba(42, 37, 32, 0.8);
+    -moz-box-shadow: 2px 2px 3px rgba( 0, 0, 0, 0.55 ) inset;
+    -webkit-box-shadow: 2px 2px 3px rgba( 0, 0, 0, 0.55 ) inset;
+    box-shadow: 2px 2px 3px rgba( 0, 0, 0, 0.55 ) inset;
+    border: 1px solid rgba( 255, 255, 255, 0.13 );
+}
+form .submitElement p{
+	display: inline-block;
+	margin-right: 35px;
+	font-size: 13px;
+	vertical-align: middle;
+}	
+form .submitElement p span{
+	color: #d71440;
+}
+
+/***********************--[ Footer ]--***********************/
+
+footer span {
+	font: 400 18px 'Rajdhani', monospace;
+}
+footer .right span {
+	font-size: 15px;
+	font-weight: 500;
+	color: #73644b;
+}
+footer .right a + a {
+	border-left: 1px dotted #73644b;
+	padding-left: 10px;
+}
+footer .right a {
+	color: #95866d;
+	padding-right: 10px;
+}
+footer .right a:hover {
+	color: #95866d;
+}
+footer .logo {
+	font-size: 23px;
+	padding: 0;
+}
+footer .center {
+	overflow: hidden;
+}
+footer .area.sect-nav {
+	line-height: 47px;
+}
+/***********************--[ Repsonsive-Menu-Mobilne ]--***********************/
+body nav a.mobile-menu {
+	text-decoration: none;
+	padding: 25px 25px;
+	font-size: 16px;
+	right: 0;
+	margin-right: 20px;
+	text-align: center;
+	color: #fff;
+	position: absolute;	
+	z-index: 2;
+	display: none;
+}
+body nav a.mobile-menu span,
+body nav a.mobile-menu span:before,
+body nav a.mobile-menu span:after {
+	margin-left: 15px;
+	position: relative;
+	width: 35px;
+	height: 3px;
+	background: #73644b;
+	display: inline-block;
+	vertical-align: middle;
+}
+body nav a.mobile-menu span,
+body nav a.mobile-menu span:before,
+body nav a.mobile-menu span:after {
+	content: "";
+	right: 0;
+	position: absolute;
+
+}
+body nav a.mobile-menu span:before {
+	margin-top: -10px;
+	right: 0;
+}
+body nav a.mobile-menu span:after {
+	margin-top: 10px;
+	right: 0;
+}
+
+/***********************--[ Repsonsive ]--***********************/
+@media all and (max-width: 1270px) {
+	.header-top, .typed-cursor {
+		font-size: 4em;
+	}
+	nav a.menu, .logo {
+		padding: 0 12px;
+	}
+}
+@media all and (max-width: 1175px) {
+	.area.portfolio .page {
+		margin: 0 50px;
+	}
+}
+@media all and (max-width: 1095px) {
+	.area.portfolio .page {
+		margin: 0 30px;
+	}
+	.area.contact .contact-box > .left, 
+	.area.contact .contact-box > .right {
+		width: 40%;
+	}
+	.area.contact .contact-box > .left .icon {
+		font-size: 1.5em;
+	}	
+	form .icon.phone:before, form .icon.mail:before {
+		margin: 0 20px;
+	}
+	form > .left, form > .right {
+		width: 42%;
+	}
+
+@media all and (max-width: 1000px) {
+	.center.top {
+		padding-top: 50px;
+	}
+	nav div.fb {
+		right: inherit;
+		left: 0;
+		top: 0;
+		position: absolute;
+	}
+	.icon-facebook {
+		line-height: 56px;
+	}
+	.icon-facebook:hover {
+		background-color: inherit;
+		color: inherit;
+		color: #73644b;
+	}
+	body nav a.mobile-menu {
+		display: block;
+	}
+	nav a.menu.main-nav {
+		margin-top: 50px;
+	}
+	div.logo-container {
+		right: 0;
+	}
+	nav a.menu {
+		background: #211d18;
+		border-top: 1px solid #3c3c3c;
+		padding: 10px 0;
+		display: none;
+	}
+	body nav.activeMenu a.menu {
+		display: block;
+		opacity: 0;
+	}
+	body nav.ekstraactiveMenu a.menu {
+		opacity: 1;
+	}
+	body nav.activeMenu.ekstraactiveMenu a.mobile-menu span {		
+		background: transparent;
+	}
+
+	body nav.activeMenu.ekstraactiveMenu a.mobile-menu span:after {
+		-moz-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		margin-top: 0;
+	}
+	
+	body nav.activeMenu.ekstraactiveMenu a.mobile-menu span:before {
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+		margin-top: 0;
+	}
+
+	/********************************/
+	.header-box {
+		height: auto;
+		top: inherit;
+		bottom: inherit;
+		margin: 50px auto 0;
+		position: relative;
+		display: inherit;
+	}
+	body .photo {
+		height: 250px;
+	}
+	.area.main-page .arrow {
+		margin: 20px auto 0;
+		position: relative; 
+		top, bottom, right, left: inherit;
+	}
+	#static-wrap {
+		background: url(../images/wood4min.jpg);
+	}
+	.area.main-page {
+		background: none;
+	}
+	.text-area {
+		margin: 80px auto;
+		font-size: 1.2em;
+	}
+	.page-middle {
+		margin: 80px auto;
+		padding: 0 8%;
+		overflow: hidden;
+	}
+	.area.contact .page-middle {
+		padding: 0;
+	}
+	.area.contact .contact-box > .left, 
+	.area.contact .contact-box > .right {
+		width: 90%;
+		padding: 35px 5% 0;	
+		float: none;
+		text-align: center;
+	}
+	form .icon.phone:before, form .icon.mail:before {
+		width: 40px;
+		height: 40px;
+		margin: 0 20px;
+	}
+	.area.contact .contact-box > .left .icon {
+		font-size: 1.5em;
+		padding: 25px 0;
+	}
+	form .left.social, form .right.social {
+		width: 48%;
+	}
+	form .icon.facebook, form .icon.github {
+		padding: 15% 0;
+		margin: 0 auto;
+	}
+	form .icon.mail {
+		margin-top: 20px;
+	}
+	.area.contact .contact-box > .right {
+		padding-top: 20px;
+	}
+	form > .left, form > .right {
+		width: 90%;
+		padding: 5%;
+	}
+	.image1, .image2 {
+		min-height: 369px;
+	}
+	.area.portfolio .image1 {
+		background: url(../images/landing-hard-min.jpg) center no-repeat;
+	}
+	.area.portfolio .image2 {
+		background: url(../images/moja-min.jpg) center no-repeat;
+	}
+	.area.portfolio .page .check {
+		opacity: 1;
+		border: none;
+		height: 200px;
+	}
+	.area.portfolio .page .check.second {
+		height: 145px;
+	}
+	.area.portfolio .page {
+		margin: 0 auto;
+		width: 256px;
+	}
+	.area.portfolio .image1:before, .image2:before,
+	.page:hover .image1:before, .page:hover .image2:before, .check:hover .image1:before {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	.area.portfolio .page:hover .image1, .page:hover .image2, .check:hover .image1 {
+		transform: none;
+		-webkit-filter: none;
+	}
+@media all and (max-width: 768px) {
+	.area.portfolio .page {
+		margin: 0 1%;
+	}
+	.area.portfolio .page-middle {
+		padding: 0 7%;
+	}
+}
+@media all and (max-width: 680px) {
+	.header-top, .typed-cursor {
+		font-size: 3.5em;
+	}
+	.area.skills ul li,
+	.area.skills ul li.know-sth {
+		width: 49%;
+	}
+	.area.portfolio .page {
+		float: none;
+		margin: 0 auto;
+	}
+	.area.portfolio .page.right {
+		margin-top: 60px;
+	}
+}
+@media all and (max-width: 590px) {
+	.header-top, .typed-cursor {
+		font-size: 3em;
+	}
+	nav div.fb {
+		display: none;
+	}
+	form > .left .left, form > .left .right {
+		width: 90%;
+	}
+	form > .left .row.parentRow {
+		margin-top: 0;
+	}
+	form > .left .row.parentRow input {
+		margin-top: 10px;
+	}
+	footer.area.sect-nav {
+		height: 100px;
+		line-height: 50px;
+	}
+	footer.area.sect-nav .left, footer.area.sect-nav .right {
+		float: none;
+	} 
+}
+@media all and (max-width: 510px) {
+	.header-top, .typed-cursor {
+		font-size: 2em;
+		font-weight: 700;
+	}
+	body .photo {
+		height: 180px;
+	}
+	body .arrow {
+		bottom: 0;
+	}
+}
+@media all and (max-width: 380px) {
+	footer.area.sect-nav {
+		height: 130px;
+		line-height: 30px;
+	}
+	.text-area.skill {
+		padding: 30px 0;
+	}	
+	form .icon.phone:before, form .icon.mail:before {
+		margin: 0 8px;
+	}
+	.area.contact .contact-box > .left .icon {
+		font-size: 1.3em;
+	}
+}
+@media all and (max-width: 340px) {
+	.header-top, .typed-cursor {
+		font-size: 1.7em;
+		font-weight: 700;
+	}
+	body .photo {
+		height: 180px;
+	}
+}	
