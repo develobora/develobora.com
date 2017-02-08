@@ -11,27 +11,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body id="sent">
-<div id="content">
+	<div id="content">
 		<div id="static-wrap">
 			<section class="area main-page">
 			<div class="shadow"></div>
 				<div class="center">
-					<div id="content">
-						<div class="header-box">
-							<span class="header-top">
-							<?php 
-								if (empty($errors)) {
-									echo '<ul>';
-										echo '<li style="opacity: 1; display: inherit; width: inherit; transform: inherit;">Wiadomość została wysłana. Dziękuję za kontakt!</li>';
-										echo '</ul></ br>';		
-										echo '<a href="index.php" ;return: false>Powrót do strony głównej.<a>';
-									}
-							?>
-							</span>
-						</div>
+					<div class="header-box">
+						<span class="header-top">
+						<?php 
+							if (empty($errors)) {
+								echo '<ul>';
+									echo '<li style="opacity: 1; display: inherit; width: inherit; transform: inherit;">Wiadomość została wysłana. Dziękuję za kontakt!</li>';
+									echo '</ul></ br>';		
+									echo '<a href="index.php" ;return: false>Powrót do strony głównej.<a>';
+								}
+						?>
+						</span>
 					</div>
 				</div>
 			</section>
-	
+		</div>
+	</div>
 </body>
 </html>
