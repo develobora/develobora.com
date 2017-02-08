@@ -15,7 +15,6 @@ body#contact,
 body#sent {
 	display: inherit;
 }
-
 /* wyłączanie strzałek w inpucie number */
 input[type='number'] {
     -moz-appearance:textfield;
@@ -137,7 +136,6 @@ body nav.activebg {
 nav a:hover.menu,
 nav a.active {
 	color: #897656;
-	font-weight: 500;
 }			
 			/*--[ Logo ]--*/
 .logo {
@@ -269,10 +267,6 @@ body .photo.ready {
 
 .area.about-me {
 	background-image: url(../images/10.jpg);
-	background-size: cover;
-	 -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
 }
 			/*--[ Text-area ]--*/
 .text-area {
@@ -289,10 +283,6 @@ body .photo.ready {
 
 .area.skills {
 	background-image: url(../images/7.jpg);
-	background-size: cover;
-	 -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
 }
 .area.skills ul li {
 	list-style: none;
@@ -320,10 +310,6 @@ body .photo.ready {
 
 .area.portfolio {
 	background-image: url(../images/4.jpg);
-	background-size: cover;
-	 -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
 }
 .page-middle {
 	padding: 100px 0;
@@ -410,10 +396,6 @@ body .photo.ready {
 			/*--[ Background-color ]--*/
 .area.contact {
 	background-image: url(../images/telephone.jpg);
-	background-size: cover;
-	 -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
 }
 form {
 	background-color: rgba(42, 37, 32, 0.8);
@@ -656,10 +638,18 @@ body nav a.mobile-menu span:after {
 }
 
 /***********************--[ Repsonsive ]--***********************/
-@media all and (max-width: 1270px) {
+@media all and (max-width: 1400px) {
+	.header-box {
+		top: 10%;
+	}
 	.header-top, .typed-cursor {
 		font-size: 4em;
 	}
+	body .photo {
+		height: 300px;
+	}
+}
+@media all and (max-width: 1270px) {
 	nav a.menu, .logo {
 		padding: 0 12px;
 	}
@@ -897,7 +887,6 @@ body nav a.mobile-menu span:after {
 @media all and (max-width: 510px) {
 	.header-top, .typed-cursor {
 		font-size: 2em;
-		font-weight: 700;
 	}
 	body .photo {
 		height: 180px;
@@ -924,7 +913,6 @@ body nav a.mobile-menu span:after {
 @media all and (max-width: 340px) {
 	.header-top, .typed-cursor {
 		font-size: 1.7em;
-		font-weight: 700;
 	}
 	body .photo {
 		height: 180px;
