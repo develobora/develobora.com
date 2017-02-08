@@ -3,6 +3,19 @@ $(document).ready(function() {
 	  $('body').addClass('ready');
     var screenHeight = $(window).height()+50;
     $('.area.main-page').css('height', screenHeight + 'px');
+
+/***********************--[ Turn-off-scroll-EGDE ]--************************/
+    
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+
+    if(isEdge === true) {
+      $('section').css({
+        'background-attachment': 'scroll'
+      }) 
+    }
 });
 
 Tmpl = {
@@ -52,7 +65,7 @@ $(document).ready(function(){
 		}, 200);
 	});
 
-  $('.main-nav').click(function(e){  
+  $('.main-nav').click(function(e){   //funkcja click na 'scrollup'
       
       jQuery('html, body').animate({  
         scrollTop: jQuery('body').offset().top
