@@ -55,8 +55,6 @@ function _no_pl($tekst)
 	}
 }
 
-
-
 if (empty($errors) === true) {
 
 	$email_message .= "Full Name: ".($name)."\n";
@@ -90,28 +88,27 @@ if (empty($errors) === true) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body id="contact">
-<div id="content">
+	<div id="content">
 		<div id="static-wrap">
 			<section class="area main-page">
 			<div class="shadow"></div>
 				<div class="center">
-					<div id="content">
-						<div class="header-box">
+					<div class="header-box">
 							<span class="header-top">
-							<?php 
-								if (empty($errors) === false) {
-									echo '<ul>';
-									foreach($errors as $error) {
-										echo '<li style="opacity: 1; display: inherit; width: inherit; transform: inherit;">', $error, '</li>';
-									}
-									echo '</ul></ br>';		
-									}			
-							?>
-							</span>
-						</div>
+						<?php 
+							if (empty($errors) === false) {
+								echo '<ul>';
+								foreach($errors as $error) {
+									echo '<li style="opacity: 1; display: inherit; width: inherit; transform: inherit;">', $error, '</li>';
+								}
+								echo '</ul></ br>';		
+								}			
+						?>
+						</span>
 					</div>
 				</div>
 			</section>
-	
+		</div>
+	</div>	
 </body>
 </html>
