@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $message_body .=  "$key: $value\n";
       }
       
-      $to = 'kontakt@develobora.com';
+      $to = 'mojapoczta@przkład.com';
       $subject = 'Kontakt z develobora.com';
       if (mail($to, $subject, $message_body)){
           $success = "Wiadomość została wysłana. Dziękuję za kontakt!";
